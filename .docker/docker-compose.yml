@@ -1,0 +1,19 @@
+version: '3.7'
+
+networks:
+  refme:
+    driver: ${NETWORKS_DRIVER}
+
+services:
+  refme:
+    image: refme/refme
+    container_name: refme
+    build:
+      context: .
+      dockerfile: ./refme/Dockerfile
+    volumes:
+      - "${BASE_DIR}/:${WORK_DIR}"
+    ports:
+      - "${REFME_PORT}:${REFME_PORT}"
+    networks:
+      - refme
