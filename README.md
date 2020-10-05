@@ -23,3 +23,11 @@ $ protoc -I=$DIR  \
 ```
 
 ###
+
+## Usage
+
+### Envoy
+
+Runns on `localhost:8080`
+
+Proxy from `:8080` to `:50051` Rpc 
