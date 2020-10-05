@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package postcode;
+
+// Service definition
+service PostcodeService {
+    // Sends all Postcodes
+    rpc GetAll (PostcodeRequest) returns (PostcodeResponse) {}
+}
+
+// The request Sent from server
+message PostcodeRequest {
+    string line = 1;
+}
+
+// The response sent to client
+message PostcodeResponse {
+    repeated string postcodes = 1;
+}
+
+repeated PostcodeResponse PostcodeResponses = 1;
