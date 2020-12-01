@@ -15,7 +15,8 @@ message PostcodeRequest {
 
 // The response sent to client
 message PostcodeResponse {
-    repeated string postcodes = 1;
+    //repeated double postcodes = 1 [packed=true];
+    string postcodes = 1;
 }
 
-repeated PostcodeResponse PostcodeResponses = 1;
+//repeated PostcodeResponse PostcodeResponses = 1;

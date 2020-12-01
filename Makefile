@@ -22,7 +22,7 @@ vpath %.proto $(PROTOS_PATH)
 
 all: server
 
-server: refme.pb.o refme.grpc.pb.o server.o
+server: postcode.pb.o postcode.grpc.pb.o server.o
 	$(CXX) $^ $(LDFLAGS) -o $@
 
 .PRECIOUS: %.grpc.pb.cc
