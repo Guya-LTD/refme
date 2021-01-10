@@ -4,19 +4,20 @@ package postcode;
 
 // Service definition
 service PostcodeService {
-    // Sends all Postcodes
-    rpc GetAll (PostcodeRequest) returns (PostcodeResponse) {}
+    // Sends a Postcode detail
+    rpc GetByPostcode (PostcodeRequest) returns (PostcodeResponse);
 }
 
 // The request Sent from server
 message PostcodeRequest {
-    string line = 1;
+    string postcode = 1;
 }
 
 // The response sent to client
 message PostcodeResponse {
-    //repeated double postcodes = 1 [packed=true];
-    string postcodes = 1;
+    string postcode = 1;
+    string zone = 2;
+    string locality = 3;
+    string longitude = 4;
+    string latitude = 5;
 }
-
-//repeated PostcodeResponse PostcodeResponses = 1;

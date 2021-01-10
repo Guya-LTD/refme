@@ -44,16 +44,17 @@ std::unique_ptr<Server> server;
 
 // Logic and data behind the server's behavior.
 class PostcodeServiceImpl final : public PostcodeService::Service {
-  Status GetAll(ServerContext* context, const PostcodeRequest* request,
+  Status GetByPostcode(ServerContext* context, const PostcodeRequest* request,
                   PostcodeResponse* reply) override {
     std::cout << "Received request: " << request->ShortDebugString()
               << std::endl;
     // Creating an object of CSVWriter
     CSVReader reader("references/postcodes.csv");
-    // Get the data from CSV File
-    //std::vector<std::vector<std::string>> dataList = reader.getData();
-
-    //reply->set_f(dataList);
+    reply->set_postcode("1");
+    reply->set_zone("2");
+    reply->set_locality("3");
+    reply->set_longitude("4");
+    reply->set_latitude("5");
 
     return Status::OK;
   }
